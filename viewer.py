@@ -10,8 +10,9 @@ from glb_material_mesh_index import glb_material_mesh_index
 from PIL import Image, ImageDraw
 
 
-view_size = 800
-color_type = 'MESH_INDEX'
+view_size = 600
+# color_type = 'MESH_INDEX'
+color_type = 'MATERIAL'
 
 
 def rotate( faces, axis, theta ):
@@ -53,12 +54,13 @@ def p3dto2d( vertex ):
 
 
 # --- load and transform object to view
-with open('guy2.glb', 'rb') as f:
+with open('object.glb', 'rb') as f:
     faces, materials, mesh_indexes = glb_material_mesh_index(f)
 
 rotate(faces, (0,1,0), math.pi )
 rotate(faces, (0,0,1), math.pi*0.5 )
 faces *= 250
+faces += (0,0,120)
 
 # ----
 
