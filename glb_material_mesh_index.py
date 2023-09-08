@@ -63,6 +63,6 @@ def glb_material_mesh_index( file_obj ):
                 materials.append( p['material'] )
                 mesh_indexes.append( mesh_index )
 
-    return zip( final_faces, materials, mesh_indexes )
+    return np.array(final_faces), materials, mesh_indexes
 
 
